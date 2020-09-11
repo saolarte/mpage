@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: .
+    depends_on:
+      - mongo
+    volumes:
+      - ./src:/app
+    ports:
+      - "8000:80"
+  mongo:
+    image: mongo
+    ports:  
+      - 27017:27017
+    volumes:
+      - ./init-db.js:/docker-entrypoint-initdb.d/init-db.js

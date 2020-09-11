@@ -1,5 +1,3 @@
-# mpage
-
 BUILD INSTRUCTIONS
 - Run 'docker-compose up' to start mongo-db and Flask server
 
