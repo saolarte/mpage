@@ -1,0 +1,34 @@
+<app>
+    <integer name='number'/>
+    <integer name='count'/>
+    <integer name='remainder'>
+
+    <func signal='main'></func>
+        <print>Enter an integer:<print/>
+            <read_input>
+                <variable name='number'/>
+            <read_input/>
+        
+        <integer name='runs_number' initial_value='{div variable='number' value='2'}'/> #init runs_number as number/2
+        <assign variable='count' value='runs_number'/>
+        <assign variable='remainder' value='{mod variable='number' value='count'}'/> #init remainder as number % count
+        <divisor variable='remainder' value='0' runs_number='runs_number'/>
+    </func>
+
+    <func name='equals' signal= 'signal.equal'>
+        <print>
+            <variable name='count'/>
+        </print>
+        
+        <minus variable='count' value='1'/>
+        <assign variable='remainder' value='{mod variable='number' value='count'}'/>
+    </func>
+
+    <func name='notequals' signal= 'signal.notequal'>
+        <minus variable='count' value='1'/>
+        <assign variable='remainder' value='{mod variable='number' value='count'}'/>
+    </func>
+
+
+</app>
+
